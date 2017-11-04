@@ -3,8 +3,8 @@
 
 # include	"../libft/libft.h"
 # include	"../ft_printf/ft_printf.h"
+# include	"../lev_tree/lev_trees.h"
 # include	"macros.h"
-# include	"b_trees.h"
 
 # define	CMD_SIZE 10
 
