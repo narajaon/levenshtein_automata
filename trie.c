@@ -87,10 +87,9 @@ int			main(int ac, const char *av[])
 
 	root = new_lev_node("");
 	test = root->child;
-	add_to_child(&test, "coucou");
-	//print_child(test);
-	add_to_child(&test, "ouco");
+	add_to_child(&test, "hij");
 	add_to_child(&test, "abcd");
+	add_to_child(&test, "efg");
 	print_child(test);
 	return (0);
 }
