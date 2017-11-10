@@ -23,12 +23,12 @@ void		print_child(t_list *child)
 	node = child->content;
 	if (child != NULL)
 	{
-		printf("%c\n", node->content);
-		if (node->is_end == TRUE)
-			printf("is end\n");
 		while (tmp)
 		{
 			node = tmp->content;
+			printf("%c\n", node->content);
+			if (node->is_end == TRUE)
+				printf("is end\n");
 			print_child(node->child);
 			tmp = tmp->next;
 		}
@@ -87,8 +87,10 @@ int			main(int ac, const char *av[])
 
 	root = new_lev_node("");
 	test = root->child;
-	add_to_child(&test, "hij");
 	add_to_child(&test, "abcd");
+	add_to_child(&test, "hij");
+	add_to_child(&test, "azbcd");
+	add_to_child(&test, "hbczzd");
 	add_to_child(&test, "efg");
 	print_child(test);
 	return (0);
