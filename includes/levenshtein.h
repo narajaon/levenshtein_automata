@@ -14,6 +14,8 @@ typedef struct			s_lev
 	t_list				*child;
 }						t_lev;
 
+t_lev		*new_lev_node(char *c);
 void		add_to_child(t_list **child, char *word);
 void		check_child_list(t_list **child, char *word);
+void		print_child(t_list *child);
 #endif

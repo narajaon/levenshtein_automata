@@ -7,8 +7,8 @@ LIBFT_LIB = libft.a
 MKFILE = Makefile
 SRC = *.c
 FLAG = -O2
-#FLAG += -g
-FLAG += -fsanitize=address
+FLAG += -g
+#FLAG += -fsanitize=address
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
