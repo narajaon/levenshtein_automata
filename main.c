@@ -1,13 +1,16 @@
 #include "includes/levenshtein.h"
 
-void		list_to_lev_tree(t_list **tree_nodes, t_list *data_base)
+char		*autocompleted_str(char *to_search, t_list *data_base)
 {
+	char	*history;
+
+	history = NULL;
+	return (history);
 }
 
 int			main(int ac, char **av)
 {
 	t_list	*test;
-	t_list	*to_free;
 
 	if (ac < 2)
 		return (printf("Not enough arguments\n"));

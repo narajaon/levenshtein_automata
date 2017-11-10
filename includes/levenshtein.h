@@ -14,8 +14,10 @@ typedef struct			s_lev
 	t_list				*child;
 }						t_lev;
 
-t_lev		*new_lev_node(char *c);
-void		add_to_child(t_list **child, char *word);
-void		check_child_list(t_list **child, char *word);
-void		print_child(t_list *child);
+t_lev					*new_lev_node(char *c);
+void					add_to_child(t_list **child, char *word);
+void					check_child_list(t_list **child, char *word);
+void					list_to_lev_tree(t_list **tree_nodes,
+		t_list *data_base);
+void					print_child(t_list *child);
 #endif
