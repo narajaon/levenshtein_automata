@@ -1,6 +1,6 @@
 #include "includes/levenshtein.h"
 
-void		list_to_lev_tree(t_list **tree_nodes, t_list *data_base)
+void		list_to_lev_tree(t_hlist **tree_nodes, t_hlist *data_base)
 {
 	while (data_base)
 	{

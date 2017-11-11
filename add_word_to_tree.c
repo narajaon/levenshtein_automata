@@ -1,9 +1,9 @@
 #include "includes/levenshtein.h"
 
-void		check_child_list(t_list **child, char *word)
+void		check_child_list(t_hlist **child, char *word)
 {
 	t_lev	*new;
-	t_list	*tmp;
+	t_hlist	*tmp;
 
 	tmp = *child;
 	new = NULL;
@@ -22,11 +22,11 @@ void		check_child_list(t_list **child, char *word)
 	if (*word != '\0')
 	{
 		add_to_child(&tmp, word);
-		ft_lstadd_back(child, tmp);
+		ft_hlstadd_back(child, tmp);
 	}
 }
 
-void		add_to_child(t_list **child, char *word)
+void		add_to_child(t_hlist **child, char *word)
 {
 	t_lev	*new;
 
@@ -36,9 +36,7 @@ void		add_to_child(t_list **child, char *word)
 	if (*child == NULL)
 	{
 		new = new_lev_node(word);
-		*child = (t_list *)malloc(sizeof(t_list));
-		(*child)->content = new;
-		(*child)->next = NULL;
+		*child = ft_hlstnew(new);
 		add_to_child(&new->child, word + 1);
 	}
 	else if (*child != NULL)
