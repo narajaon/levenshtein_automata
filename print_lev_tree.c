@@ -1,9 +1,9 @@
 #include "includes/levenshtein.h"
 
-void		print_child(t_hlist *child)
+void		print_child(t_dlist *child)
 {
 	t_lev	*node;
-	t_hlist	*tmp;
+	t_dlist	*tmp;
 
 	tmp = child;
 	if (child != NULL)

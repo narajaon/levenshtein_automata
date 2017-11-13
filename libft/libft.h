@@ -6,7 +6,7 @@
 /*   By: narajaon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/11 18:21:28 by narajaon          #+#    #+#             */
-/*   Updated: 2017/10/18 12:09:30 by narajaon         ###   ########.fr       */
+/*   Updated: 2017/11/11 16:16:29 by narajaon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,18 @@
 # include <fcntl.h>
 # include "../ft_printf/ft_printf.h"
 
-typedef enum		e_bool
+# ifndef TRUE
+#  define TRUE 1
+# endif
+# ifndef FALSE
+#  define FALSE 0
+# endif
+
+typedef enum	e_bool
 {
-	FALSE,
-	TRUE
-}					t_bool;
+	LFTTRUE = TRUE,
+	LFTFALSE = FALSE
+}				t_bool;
 
 typedef struct	s_list
 {

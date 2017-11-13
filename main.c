@@ -1,22 +1,24 @@
 #include "includes/levenshtein.h"
 
-t_hlist		*get_branch(char *input, t_hlist *data_base)
+t_dlist		*get_branch(t_dlist *input, t_dlist *data_base)
 {
-	t_hlist	*branch;
+	t_dlist	*branch;
 	t_lev	*node;
+	char	*c;
 
 	node = NULL;
 	branch = data_base;
-	if (data_base != NULL && *input != '\0')
+	if (data_base != NULL && input != NULL)
 	{
 		while (data_base)
 		{
 			node = data_base->content;
-			if (*input == node->content)
+			c = input->content;
+			if (*c == node->content)
 			{
 				node = data_base->content;
 				branch = node->child;
-				return (get_branch(input + 1, branch));
+				return (get_branch(input->next, branch));
 			}
 			data_base = data_base->next;
 		}
@@ -25,11 +27,19 @@ t_hlist		*get_branch(char *input, t_hlist *data_base)
 	return (branch);
 }
 
-void		print_history(char *input, t_hlist *branch)
+void		print_history(t_dlist *input, t_dlist *branch)
 {
 	t_lev	*node;
+	char	*c;
+	int		i;
 
-	printf("%s", input);
+	i = 0;
+	while (input)
+	{
+		c = input->content;
+		printf("%c", *c);
+		input = input->next;
+	}
 	while (branch)
 	{
 		node = branch->content;
@@ -41,24 +51,18 @@ void		print_history(char *input, t_hlist *branch)
 
 int			main(int ac, char **av)
 {
-	t_hlist			*test;
-	t_hlist			*branch;
-	static char		input[3000];
+	t_dlist			*word;
+	t_dlist			*branch;
+	t_reader		*line;
+	char			*c;
 
-	if (ac < 2)
-		return (printf("Not enough arguments\n"));
-	av++;
-	test = NULL;
-	while (*av)
-	{
-		add_to_child(&test, *av);
-		av++;
-	}
-	print_child(test);
-	ft_bzero(input, 3000);
-	scanf("%s", input);
-	branch = get_branch(input, test);
-	print_history(input, branch);
+	branch = NULL;
+	if ((line = ft_read())->status != 0)
+		return (-1);
+	word = line->content;
+	c = word->content;
+	add_to_child(&branch, word);
+	//print_child(branch);
 	return (0);
 }
 
