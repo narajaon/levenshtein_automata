@@ -37,7 +37,7 @@ void		print_history(t_dlist *input, t_dlist *branch)
 	while (input)
 	{
 		c = input->content;
-		printf("%c", *c);
+		printf("|%c|", *c);
 		input = input->next;
 	}
 	while (branch)
@@ -53,16 +53,14 @@ int			main(int ac, char **av)
 {
 	t_dlist			*word;
 	t_dlist			*branch;
-	t_reader		*line;
-	char			*c;
+	char			*line;
 
 	branch = NULL;
-	if ((line = ft_read())->status != 0)
+	if (!(line = read_input()))
 		return (-1);
-	word = line->content;
-	c = word->content;
+	word = str_to_dlist(line);
 	add_to_child(&branch, word);
-	//print_child(branch);
+	//print_history(word, branch);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: narajaon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 11:39:44 by narajaon          #+#    #+#             */
-/*   Updated: 2017/11/11 19:03:41 by narajaon         ###   ########.fr       */
+/*   Updated: 2017/11/13 16:35:34 by narajaon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,10 @@
 # define EX			exit(1);
 # define ICI		ft_printf("ICI\n");
 # define LA			ft_printf("LA\n");
+
+# define HISTORY ".mysh_history"
+# define STDI 0
+# define STDO 1
+# define STDE 2
 
 #endif

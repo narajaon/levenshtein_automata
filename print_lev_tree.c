@@ -11,7 +11,7 @@ void		print_child(t_dlist *child)
 		while (tmp)
 		{
 			node = tmp->content;
-			ft_putchar(node->content);
+			ft_printf("|%c|\n", node->content);
 			if (node->is_end == TRUE)
 				ft_putstr("\n---\n");
 			print_child(node->child);
