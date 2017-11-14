@@ -10,6 +10,7 @@ t_dlist		*get_branch(t_dlist *input, t_dlist *data_base)
 	branch = data_base;
 	if (data_base != NULL && input != NULL)
 	{
+		ICI
 		while (data_base)
 		{
 			node = data_base->content;
