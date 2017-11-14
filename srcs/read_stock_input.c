@@ -3,6 +3,8 @@
 char		*read_input(void)
 {
 	char	*str;
+
+	str = NULL;
 	if (get_next_line(STDI, &str) < 0)
 		return (NULL);
 	return (str);

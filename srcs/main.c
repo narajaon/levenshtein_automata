@@ -14,6 +14,8 @@ int			main(int ac, char **av)
 	if (!(line = read_input()))
 		return (-1);
 	word = str_to_dlist(line);
+	if ((history_fd = open(HISTORY, O_RDONLY)) < 0)
+		exit(ft_printf("[open] Bad file descriptor\n"));
 	history = history_to_tree(history_fd);
 	add_to_history(line, &history_fd);
 	branch = get_branch(word, history);

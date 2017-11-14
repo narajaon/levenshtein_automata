@@ -2,6 +2,11 @@
 
 void		ft_hlstadd(t_dlist **alst, t_dlist *new)
 {
+	if (*alst == NULL)
+	{
+		*alst = new;
+		return ;
+	}
 	new->next = *alst;
 	(*alst)->prev = new;
 	*alst = new;

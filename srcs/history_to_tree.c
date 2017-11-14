@@ -18,8 +18,6 @@ t_dlist		*history_to_tree(int fd)
 	str = NULL;
 	new = NULL;
 	history = NULL;
-	if ((fd = open(HISTORY, O_RDONLY)) < 0)
-		exit(ft_printf("[open] Bad file descriptor\n"));
 	while ((ret = get_next_line(fd, &str)) > 0)
 	{
 		new = str_to_dlist(str);
