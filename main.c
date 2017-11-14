@@ -45,12 +45,8 @@ int			main(int ac, char **av)
 	//hl_print_next(history, &print_hlst_content);
 	//print_child(history);
 	add_to_history(line, &history_fd);
-	print_child(history);
-	/*
-	word = str_to_dlist(line);
-	add_to_child(&history, word);
 	branch = get_branch(word, history);
-	print_child(branch);*/
+	print_child(branch);
 	//print_history(word, branch);
 	//print_child(history);
 	return (0);
