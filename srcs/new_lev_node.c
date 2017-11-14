@@ -1,4 +1,4 @@
-#include "includes/levenshtein.h"
+#include "../includes/levenshtein.h"
 
 t_lev		*new_lev_node(t_dlist *c)
 {

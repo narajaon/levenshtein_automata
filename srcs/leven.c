@@ -1,4 +1,4 @@
-#include "includes/levenshtein.h"
+#include "../includes/levenshtein.h"
 
 int			min_ope(int a, int b, int c)
 {

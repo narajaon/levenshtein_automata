@@ -9,7 +9,7 @@ DLST_LIB = libftdlist.a
 PRINTF_LIB = libftprintf.a
 LIBFT_LIB = libft.a
 MKFILE = Makefile
-SRC = *.c
+SRC = srcs/*.c
 FLAG = -O2
 FLAG += -g
 #FLAG += -fsanitize=address

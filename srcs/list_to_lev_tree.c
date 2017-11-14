@@ -1,4 +1,4 @@
-#include "includes/levenshtein.h"
+#include "../includes/levenshtein.h"
 
 void		list_to_lev_tree(t_dlist **tree_nodes, t_dlist *data_base)
 {

@@ -1,4 +1,4 @@
-#include "includes/levenshtein.h"
+#include "../includes/levenshtein.h"
 
 void		check_child_list(t_dlist **child, t_dlist *word)
 {
@@ -24,7 +24,7 @@ void		check_child_list(t_dlist **child, t_dlist *word)
 	if (word && word->next != NULL)
 	{
 		add_to_child(&tmp, word);
-		ft_hlstadd_back(child, tmp);
+		ft_hlstadd(child, tmp);
 	}
 }
 

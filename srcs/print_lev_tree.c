@@ -1,4 +1,4 @@
-#include "includes/levenshtein.h"
+#include "../includes/levenshtein.h"
 
 void		print_child(t_dlist *child)
 {
@@ -27,7 +27,7 @@ void		print_history(t_dlist *input, t_dlist *branch)
 	int		i;
 
 	i = 0;
-	ft_printf("->");
+	ft_printf("->[");
 	while (input)
 	{
 		c = input->content;
@@ -40,7 +40,7 @@ void		print_history(t_dlist *input, t_dlist *branch)
 		printf("%c", node->content);
 		branch = node->child;
 	}
-	printf("\n");
+	printf("]\n");
 }
 
 void		print_hlst_content(t_dlist *list)
