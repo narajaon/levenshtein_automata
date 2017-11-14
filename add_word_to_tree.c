@@ -3,14 +3,16 @@
 void		check_child_list(t_dlist **child, t_dlist *word)
 {
 	t_lev	*new;
+	t_lev	*cur_char;
 	t_dlist	*tmp;
 
-	tmp = *child;
 	new = NULL;
+	tmp = *child;
 	while (tmp != NULL && word != NULL)
 	{
 		new = tmp->content;
-		if (new->content == (char)word->content)
+		cur_char = word->content;
+		if (new->content == cur_char->content)
 		{
 			if (word->next == NULL)
 				new->is_end = TRUE;
@@ -19,7 +21,7 @@ void		check_child_list(t_dlist **child, t_dlist *word)
 		}
 		tmp = tmp->next;
 	}
-	if (word->next != NULL)
+	if (word && word->next != NULL)
 	{
 		add_to_child(&tmp, word);
 		ft_hlstadd_back(child, tmp);
@@ -30,13 +32,14 @@ void		add_to_child(t_dlist **child, t_dlist *word)
 {
 	t_lev	*new;
 
-	new = NULL;
+	new = (*child)->content;
 	if (word == NULL || word->content == '\0')
 		return ;
 	if (*child == NULL)
 	{
-		new = new_lev_node(word);
+		new = word->content;
 		*child = ft_hlstnew(new);
+		new = (*child)->content;
 		add_to_child(&new->child, word->next);
 	}
 	else if (*child != NULL)

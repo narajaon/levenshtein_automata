@@ -33,3 +33,14 @@ t_dlist		*ft_hlstnew(t_lev *new)
 	child->next = NULL;
 	return (child);
 }
+
+t_dlist		*ft_hlstnew_void(void *new)
+{
+	t_dlist	*child;
+
+	child = (t_dlist *)malloc(sizeof(t_dlist));
+	child->content = new;
+	child->prev = NULL;
+	child->next = NULL;
+	return (child);
+}

@@ -1,0 +1,31 @@
+#include "includes/levenshtein.h"
+
+void		add_to_history(char *str, int *fd)
+{
+	if ((*fd = open(HISTORY, O_RDWR | O_APPEND)) < 0)
+		exit(ft_printf("[open] Bad file descriptor\n"));
+	ft_dprintf(*fd, "%s\n", str);
+	close(*fd);
+}
+
+t_dlist		*history_to_tree(int fd)
+{
+	t_dlist		*new;
+	t_dlist		*history;
+	char		*str;
+	int			ret;
+
+	str = NULL;
+	new = NULL;
+	history = NULL;
+	if ((fd = open(HISTORY, O_RDONLY)) < 0)
+		exit(ft_printf("[open] Bad file descriptor\n"));
+	while ((ret = get_next_line(fd, &str)) > 0)
+	{
+		new = str_to_dlist(str);
+		add_to_child(&history, new);
+		free_str(&str);
+	}
+	close(fd);
+	return (history);
+}

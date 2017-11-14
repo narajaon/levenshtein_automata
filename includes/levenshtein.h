@@ -24,11 +24,17 @@ void					check_child_list(t_dlist **child, t_dlist *word);
 void					list_to_lev_tree(t_dlist **tree_nodes,
 		t_dlist *data_base);
 void					print_child(t_dlist *child);
+void					print_history(t_dlist *input, t_dlist *branch);
 
 void					ft_hlstadd(t_dlist **alst, t_dlist *nu);
 t_dlist					*ft_hlstnew(t_lev *nu);
+t_dlist					*ft_hlstnew_void(void *new);
 void					ft_hlstadd_back(t_dlist **alst, t_dlist *nu);
+void					print_hlst_content(t_dlist *list);
+void					hl_print_next(t_dlist *list, void (*print)());
 
 char					*read_input(void);
+void					add_to_history(char *str, int *fd);
+t_dlist					*history_to_tree(int fd);
 t_dlist					*str_to_dlist(char *input);
 #endif

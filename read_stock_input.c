@@ -3,13 +3,8 @@
 char		*read_input(void)
 {
 	char	*str;
-	int		fd;
-
-	if ((fd = open(HISTORY, O_RDWR | O_APPEND)) < 0)
-		exit(ft_printf("[open] Bad file descriptor\n"));
 	if (get_next_line(STDI, &str) < 0)
 		return (NULL);
-	ft_dprintf(fd, "%s\n", str);
 	return (str);
 }
 
@@ -42,7 +37,7 @@ t_dlist		*str_to_dlist(char *input)
 	while (input[i])
 	{
 		word = ft_hlstnew(new_lev_node_c(&input[i]));
-		add_dlist_to_child(&entire, word);
+		ft_hlstadd_back(&entire, word);
 		i++;
 	}
 	return (entire);
