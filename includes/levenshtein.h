@@ -25,6 +25,7 @@ t_lev					*new_lev_node(t_dlist *c);
 t_lev					*new_lev_node_c(char *c);
 void					add_to_child(t_dlist **child, t_dlist *word);
 void					add_dlist_to_child(t_dlist **parent, t_dlist *child);
+void					add_branch_to_input(t_dlist **input, t_dlist *branch);
 void					check_child_list(t_dlist **child, t_dlist *word);
 void					list_to_lev_tree(t_dlist **tree_nodes,
 		t_dlist *data_base);

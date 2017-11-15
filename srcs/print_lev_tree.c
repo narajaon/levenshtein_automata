@@ -27,7 +27,7 @@ void		print_history(t_dlist *input, t_dlist *branch)
 	int		i;
 
 	i = 0;
-	ft_printf("->[");
+	ft_printf("[");
 	while (input)
 	{
 		c = input->content;
