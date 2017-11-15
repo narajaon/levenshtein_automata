@@ -3,10 +3,16 @@
 
 # include	"../libft/libft.h"
 # include	"../ft_printf/ft_printf.h"
-# include	"../ft_input_reader/inc/ft_input_reader.h"
 # include	"macros.h"
 
 # define	CMD_SIZE 10
+
+typedef struct			s_dlist
+{
+	void *content;
+	struct s_dlist		*prev;
+	struct s_dlist		*next;
+}						t_dlist;
 
 typedef struct			s_lev
 {
