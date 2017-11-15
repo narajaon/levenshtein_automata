@@ -11,18 +11,19 @@ t_dlist		*history_handler(int event, t_dlist *input)
 		if ((hstruct.history_fd = open(HISTORY, O_RDONLY | O_CREAT)) < 0)
 			exit(ft_printf("[mysh_history] Bad file descriptor\n"));
 	}
-	hstruct.history = history_to_tree(hstruct.history_fd);
+	hstruct.history_root = history_to_tree(hstruct.history_fd);
 	if (event == IR_UP)
-		hstruct.cur_branch = history_up(input, hstruct.cur_branch, history);
+		hstruct.cur_branch = history_up(input, hstruct.cur_branch, hstruct.history_root);
 	else if (event == IR_DOWN)
-		hstruct.cur_branch = history_down(input, hstruct.cur_branch, history);
+		hstruct.cur_branch = history_down(input, hstruct.cur_branch, hstruct.history_root);
 	else if (event == IR_RESET)
-		hstruct.cur_branch = get_branch(input, NULL, hstruct.history);
+		hstruct.cur_branch = NULL;
 	else if (event == IR_CLEAR)
 		hstruct.cur_branch = NULL;
 	else
 		exit(printf("[mysh_history] Bad event\n"));
-	result = add_branch_to_input(hstruct.input, hstruct.cur_branch);
+	add_branch_to_input(&input, hstruct.cur_branch);
+	result = input;
 	return (result);
 }
 

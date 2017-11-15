@@ -1,7 +1,7 @@
 NAME = levenshtein
 HEAD = includes/levenshtein.h
-PRINTF_DIR = ft_printf/
-LIBFT_DIR = libft/
+PRINTF_DIR = ../ft_printf/
+LIBFT_DIR = ../libft/
 PRINTF_LIB = libftprintf.a
 LIBFT_LIB = libft.a
 MKFILE = Makefile
@@ -19,6 +19,7 @@ $(NAME): $(SRC) $(HEAD) $(MKFILE)
 	@gcc $(SRC) $(FLAG)\
 		$(PRINTF_DIR)/$(PRINTF_LIB)\
 		$(LIBFT_DIR)/$(LIBFT_LIB)\
+		-I ../ft_mem/inc/\
 		-o $(NAME)
 
 clean:

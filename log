@@ -1,0 +1,166 @@
+In file included from srcs/add_branch_to_input.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+In file included from srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:16:
+../ft_mem/inc/ft_mem.h:27:8: error: conflicting types for 'ft_memcmp'
+int                             ft_memcmp(void *lhs, void *rhs, size_t n);
+                                ^
+srcs/../includes/../../ft_dlist/inc/../../libft/libft.h:44:8: note: previous declaration is here
+int                             ft_memcmp(const void *s1, const void *s2, size_t n);
+                                ^
+In file included from srcs/add_branch_to_input.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:17:11: fatal error: 'ft_term.h' file not found
+# include "ft_term.h"
+          ^~~~~~~~~~~
+2 errors generated.
+In file included from srcs/add_word_to_tree.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+In file included from srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:16:
+../ft_mem/inc/ft_mem.h:27:8: error: conflicting types for 'ft_memcmp'
+int                             ft_memcmp(void *lhs, void *rhs, size_t n);
+                                ^
+srcs/../includes/../../ft_dlist/inc/../../libft/libft.h:44:8: note: previous declaration is here
+int                             ft_memcmp(const void *s1, const void *s2, size_t n);
+                                ^
+In file included from srcs/add_word_to_tree.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:17:11: fatal error: 'ft_term.h' file not found
+# include "ft_term.h"
+          ^~~~~~~~~~~
+2 errors generated.
+In file included from srcs/history_to_tree.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+In file included from srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:16:
+../ft_mem/inc/ft_mem.h:27:8: error: conflicting types for 'ft_memcmp'
+int                             ft_memcmp(void *lhs, void *rhs, size_t n);
+                                ^
+srcs/../includes/../../ft_dlist/inc/../../libft/libft.h:44:8: note: previous declaration is here
+int                             ft_memcmp(const void *s1, const void *s2, size_t n);
+                                ^
+In file included from srcs/history_to_tree.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:17:11: fatal error: 'ft_term.h' file not found
+# include "ft_term.h"
+          ^~~~~~~~~~~
+2 errors generated.
+In file included from srcs/leven.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+In file included from srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:16:
+../ft_mem/inc/ft_mem.h:27:8: error: conflicting types for 'ft_memcmp'
+int                             ft_memcmp(void *lhs, void *rhs, size_t n);
+                                ^
+srcs/../includes/../../ft_dlist/inc/../../libft/libft.h:44:8: note: previous declaration is here
+int                             ft_memcmp(const void *s1, const void *s2, size_t n);
+                                ^
+In file included from srcs/leven.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:17:11: fatal error: 'ft_term.h' file not found
+# include "ft_term.h"
+          ^~~~~~~~~~~
+2 errors generated.
+In file included from srcs/list_to_lev_tree.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+In file included from srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:16:
+../ft_mem/inc/ft_mem.h:27:8: error: conflicting types for 'ft_memcmp'
+int                             ft_memcmp(void *lhs, void *rhs, size_t n);
+                                ^
+srcs/../includes/../../ft_dlist/inc/../../libft/libft.h:44:8: note: previous declaration is here
+int                             ft_memcmp(const void *s1, const void *s2, size_t n);
+                                ^
+In file included from srcs/list_to_lev_tree.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:17:11: fatal error: 'ft_term.h' file not found
+# include "ft_term.h"
+          ^~~~~~~~~~~
+2 errors generated.
+In file included from srcs/main.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+In file included from srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:16:
+../ft_mem/inc/ft_mem.h:27:8: error: conflicting types for 'ft_memcmp'
+int                             ft_memcmp(void *lhs, void *rhs, size_t n);
+                                ^
+srcs/../includes/../../ft_dlist/inc/../../libft/libft.h:44:8: note: previous declaration is here
+int                             ft_memcmp(const void *s1, const void *s2, size_t n);
+                                ^
+In file included from srcs/main.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:17:11: fatal error: 'ft_term.h' file not found
+# include "ft_term.h"
+          ^~~~~~~~~~~
+2 errors generated.
+In file included from srcs/new_hlist.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+In file included from srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:16:
+../ft_mem/inc/ft_mem.h:27:8: error: conflicting types for 'ft_memcmp'
+int                             ft_memcmp(void *lhs, void *rhs, size_t n);
+                                ^
+srcs/../includes/../../ft_dlist/inc/../../libft/libft.h:44:8: note: previous declaration is here
+int                             ft_memcmp(const void *s1, const void *s2, size_t n);
+                                ^
+In file included from srcs/new_hlist.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:17:11: fatal error: 'ft_term.h' file not found
+# include "ft_term.h"
+          ^~~~~~~~~~~
+2 errors generated.
+In file included from srcs/new_lev_node.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+In file included from srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:16:
+../ft_mem/inc/ft_mem.h:27:8: error: conflicting types for 'ft_memcmp'
+int                             ft_memcmp(void *lhs, void *rhs, size_t n);
+                                ^
+srcs/../includes/../../ft_dlist/inc/../../libft/libft.h:44:8: note: previous declaration is here
+int                             ft_memcmp(const void *s1, const void *s2, size_t n);
+                                ^
+In file included from srcs/new_lev_node.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:17:11: fatal error: 'ft_term.h' file not found
+# include "ft_term.h"
+          ^~~~~~~~~~~
+2 errors generated.
+In file included from srcs/print_lev_tree.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+In file included from srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:16:
+../ft_mem/inc/ft_mem.h:27:8: error: conflicting types for 'ft_memcmp'
+int                             ft_memcmp(void *lhs, void *rhs, size_t n);
+                                ^
+srcs/../includes/../../ft_dlist/inc/../../libft/libft.h:44:8: note: previous declaration is here
+int                             ft_memcmp(const void *s1, const void *s2, size_t n);
+                                ^
+In file included from srcs/print_lev_tree.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:17:11: fatal error: 'ft_term.h' file not found
+# include "ft_term.h"
+          ^~~~~~~~~~~
+2 errors generated.
+In file included from srcs/read_stock_input.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+In file included from srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:16:
+../ft_mem/inc/ft_mem.h:27:8: error: conflicting types for 'ft_memcmp'
+int                             ft_memcmp(void *lhs, void *rhs, size_t n);
+                                ^
+srcs/../includes/../../ft_dlist/inc/../../libft/libft.h:44:8: note: previous declaration is here
+int                             ft_memcmp(const void *s1, const void *s2, size_t n);
+                                ^
+In file included from srcs/read_stock_input.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:17:11: fatal error: 'ft_term.h' file not found
+# include "ft_term.h"
+          ^~~~~~~~~~~
+2 errors generated.
+In file included from srcs/search_thru_history.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+In file included from srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:16:
+../ft_mem/inc/ft_mem.h:27:8: error: conflicting types for 'ft_memcmp'
+int                             ft_memcmp(void *lhs, void *rhs, size_t n);
+                                ^
+srcs/../includes/../../ft_dlist/inc/../../libft/libft.h:44:8: note: previous declaration is here
+int                             ft_memcmp(const void *s1, const void *s2, size_t n);
+                                ^
+In file included from srcs/search_thru_history.c:1:
+In file included from srcs/../includes/levenshtein.h:6:
+srcs/../includes/../../ft_input_reader/inc/ft_input_reader.h:17:11: fatal error: 'ft_term.h' file not found
+# include "ft_term.h"
+          ^~~~~~~~~~~
+2 errors generated.
+make: *** [levenshtein] Error 1

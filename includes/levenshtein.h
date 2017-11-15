@@ -1,9 +1,9 @@
 #ifndef LEVENSHTEIN_H
 # define LEVENSHTEIN_H
 
-# include	"../libft/libft.h"
-# include	"../ft_printf/ft_printf.h"
+# include	"../../ft_printf/ft_printf.h"
 # include "../../ft_dlist/inc/ft_dlist.h"
+# include	"../../libft/libft.h"
 # include	"macros.h"
 
 /*
@@ -20,13 +20,20 @@
 **		PUBLIC INTERFACE
 */
 
-t_dlist					*history_handler(int event, t_dlist *input);
 
 /*
 **	PRIVATE CONTENT
 */
 
 # define	CMD_SIZE 10
+
+typedef enum			e_ir
+{
+	IR_DOWN,
+	IR_UP,
+	IR_RESET,
+	IR_CLEAR
+}						t_ir;
 
 typedef struct			s_hist
 {
@@ -42,6 +49,7 @@ typedef struct			s_lev
 	t_dlist				*child;
 }						t_lev;
 
+t_dlist					*history_handler(int event, t_dlist *input);
 t_dlist					*history_up(t_dlist *word, t_dlist *cur_branch,
 		t_dlist *history);
 t_dlist					*history_down(t_dlist *word, t_dlist *cur_branch,
