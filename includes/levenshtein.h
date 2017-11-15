@@ -3,16 +3,37 @@
 
 # include	"../libft/libft.h"
 # include	"../ft_printf/ft_printf.h"
+# include "../../ft_dlist/inc/ft_dlist.h"
 # include	"macros.h"
+
+/*
+**	PUBLIC
+*/
+
+/*
+** USAGE
+*/
+
+/* WRITE USAGE */
+
+/*
+**		PUBLIC INTERFACE
+*/
+
+t_dlist					*history_handler(int event, t_dlist *input);
+
+/*
+**	PRIVATE CONTENT
+*/
 
 # define	CMD_SIZE 10
 
-typedef struct			s_dlist
+typedef struct			s_hist
 {
-	void *content;
-	struct s_dlist		*prev;
-	struct s_dlist		*next;
-}						t_dlist;
+	t_dlist				*cur_branch;
+	t_dlist				*history_root;
+	int					history_fd;
+}						t_hist;
 
 typedef struct			s_lev
 {

@@ -2,7 +2,7 @@
 
 void		add_to_history(char *str, int *fd)
 {
-	if ((*fd = open(HISTORY, O_RDWR | O_APPEND)) < 0)
+	if ((*fd = open(HISTORY, O_RDWR | O_APPEND | O_CREAT)) < 0)
 		exit(ft_printf("[open] Bad file descriptor\n"));
 	ft_dprintf(*fd, "%s\n", str);
 	close(*fd);
