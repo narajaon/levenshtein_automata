@@ -13,9 +13,11 @@ t_dlist		*history_handler(int event, t_dlist *input)
 	}
 	hstruct.history_root = history_to_tree(hstruct.history_fd);
 	if (event == IR_UP)
-		hstruct.cur_branch = history_up(input, hstruct.cur_branch, hstruct.history_root);
+		hstruct.cur_branch = history_up(input,
+				hstruct.cur_branch, hstruct.history_root);
 	else if (event == IR_DOWN)
-		hstruct.cur_branch = history_down(input, hstruct.cur_branch, hstruct.history_root);
+		hstruct.cur_branch = history_down(input,
+				hstruct.cur_branch, hstruct.history_root);
 	else if (event == IR_RESET)
 		hstruct.cur_branch = NULL;
 	else if (event == IR_CLEAR)
