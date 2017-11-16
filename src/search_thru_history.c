@@ -1,4 +1,4 @@
-#include "../includes/levenshtein.h"
+#include "../inc/levenshtein.h"
 
 t_dlist		*get_branch(t_dlist *input, t_dlist *data_base)
 {

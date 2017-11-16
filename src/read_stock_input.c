@@ -1,4 +1,4 @@
-#include "../includes/levenshtein.h"
+#include "../inc/levenshtein.h"
 
 char		*read_input(void)
 {

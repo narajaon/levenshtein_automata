@@ -1,4 +1,4 @@
-#include "../includes/levenshtein.h"
+#include "../inc/levenshtein.h"
 
 void		print_child(t_dlist *child)
 {

@@ -1,4 +1,4 @@
-#include "../includes/levenshtein.h"
+#include "../inc/levenshtein.h"
 
 void		ft_hlstadd(t_dlist **alst, t_dlist *new)
 {

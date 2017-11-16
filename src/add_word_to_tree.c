@@ -1,4 +1,4 @@
-#include "../includes/levenshtein.h"
+#include "../inc/levenshtein.h"
 
 void		check_child_list(t_dlist **child, t_dlist *word)
 {

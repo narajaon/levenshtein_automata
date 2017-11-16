@@ -1,4 +1,4 @@
-#include "../includes/levenshtein.h"
+#include "../inc/levenshtein.h"
 
 void		add_branch_to_input(t_dlist **input, t_dlist *branch)
 {

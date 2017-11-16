@@ -1,4 +1,4 @@
-#include "../includes/levenshtein.h"
+#include "includes/levenshtein.h"
 
 t_dlist		*history_handler(int event, t_dlist *input)
 {
@@ -29,7 +29,8 @@ t_dlist		*history_handler(int event, t_dlist *input)
 	return (result);
 }
 
-int			main(int ac, char **av)
+/*
+int			main(void)
 {
 	t_dlist			*word;
 	t_dlist			*history;
@@ -41,6 +42,7 @@ int			main(int ac, char **av)
 	branch = NULL;
 	history = NULL;
 	line = NULL;
+	history_fd = 0;
 	if (!(line = read_input()))
 		return (-1);
 	word = str_to_dlist(line);
@@ -51,4 +53,4 @@ int			main(int ac, char **av)
 	//hl_print_next(word, &print_hlst_content);
 	//print_child(word);
 	return (0);
-}
+}*/
