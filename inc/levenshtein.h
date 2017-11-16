@@ -49,7 +49,6 @@ typedef struct			s_lev
 	t_dlist				*child;
 }						t_lev;
 
-t_dlist					*history_handler(int event, t_dlist *input);
 t_dlist					*history_up(t_dlist *word, t_dlist *cur_branch,
 		t_dlist *history);
 t_dlist					*history_down(t_dlist *word, t_dlist *cur_branch,
@@ -79,4 +78,5 @@ char					*read_input(void);
 void					add_to_history(char *str, int *fd);
 t_dlist					*history_to_tree(int fd);
 t_dlist					*str_to_dlist(char *input);
+
 #endif

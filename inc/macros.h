@@ -6,7 +6,7 @@
 /*   By: narajaon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 11:39:44 by narajaon          #+#    #+#             */
-/*   Updated: 2017/11/13 16:35:34 by narajaon         ###   ########.fr       */
+/*   Updated: 2017/11/16 16:41:38 by narajaon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,5 @@
 # define STDO 1
 # define STDE 2
 
+# define CMD_SIZE 10
 #endif

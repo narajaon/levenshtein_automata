@@ -1,4 +1,4 @@
-NAME = autocompletion.a
+NAME = libautocompletion.a
 HEAD = inc/levenshtein.h
 PRINTF_DIR = ../ft_printf/
 LIBFT_DIR = ../libft/
@@ -51,13 +51,13 @@ $(OBJ_DIR)/%.o: %.c
 	$(CC) $(FLAGS) -c -o $@ $<
 
 clean:
-	@echo "[leven] Deleting:\033[33m *.o\033[0m"
+	@echo "[autocomp] Deleting:\033[33m *.o\033[0m"
 	@rm -f $(OBJ)
 	@make -C $(LIBFT_DIR)/ clean
 	@make -C $(PRINTF_DIR)/ clean
 
 fclean: clean
-	@echo "[leven] Deleting:\033[33m $(NAME)\033[0m"
+	@echo "[autocomp] Deleting:\033[33m $(NAME)\033[0m"
 	@rm -f $(NAME)
 	@make -C $(LIBFT_DIR)/ fclean
 	@make -C $(PRINTF_DIR)/ fclean
