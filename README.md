@@ -1,5 +1,5 @@
 # levenshtein_automata
-A project about building an autocompletion and a suggestion module (just like how google does) - Unfinished
+A project about building an autocompletion and a suggestion module - Unfinished
 
 ## Usage
 
