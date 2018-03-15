@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   add_word_to_tree.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: awyart <awyart@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/02/26 15:43:13 by awyart            #+#    #+#             */
+/*   Updated: 2018/03/07 17:44:08 by awyart           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/levenshtein.h"
 
 void		check_child_list(t_dlist **child, t_dlist *word)
@@ -15,13 +27,13 @@ void		check_child_list(t_dlist **child, t_dlist *word)
 		if (new->content == cur_char->content)
 		{
 			if (word->next == NULL)
-				new->is_end = TRUE;
+				break ;
 			check_child_list(&new->child, word->next);
 			return ;
 		}
 		tmp = tmp->next;
 	}
-	if (word && word->next != NULL)
+	if (word)
 	{
 		add_to_child(&tmp, word);
 		ft_hlstadd(child, tmp);
@@ -32,8 +44,8 @@ void		add_to_child(t_dlist **child, t_dlist *word)
 {
 	t_lev	*new;
 
-	new = (*child)->content;
-	if (word == NULL || word->content == '\0')
+	new = NULL;
+	if (word == NULL)
 		return ;
 	if (*child == NULL)
 	{

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read_stock_input.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: awyart <awyart@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/02/26 15:43:13 by awyart            #+#    #+#             */
+/*   Updated: 2018/03/07 17:44:40 by awyart           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/levenshtein.h"
 
 char		*read_input(void)
@@ -20,6 +32,8 @@ void		add_dlist_to_child(t_dlist **parent, t_dlist *child)
 	else
 	{
 		new = (*parent)->content;
+		if (new->content == '\0')
+			return ;
 		if (new->child == NULL)
 			new->child = child;
 		else
@@ -29,16 +43,41 @@ void		add_dlist_to_child(t_dlist **parent, t_dlist *child)
 
 t_dlist		*str_to_dlist(char *input)
 {
-	t_dlist	*word;
-	t_dlist	*entire;
-	int		i;
+	t_dlist		*word;
+	t_dlist		*entire;
+	t_lev		*lev;
+	int			i;
+	char		c;
 
 	i = 0;
 	word = NULL;
 	entire = NULL;
 	while (input[i])
 	{
-		word = ft_hlstnew(new_lev_node_c(&input[i]));
+		c = input[i];
+		word = ft_hlstnew(new_lev_node_c(&c));
+		ft_hlstadd_back(&entire, word);
+		i++;
+	}
+	word = ft_hlstnew(new_lev_node_c(""));
+	ft_hlstadd_back(&entire, word);
+	return (entire);
+}
+
+t_dlist		*input_to_dlist(char *input)
+{
+	t_dlist		*word;
+	t_dlist		*entire;
+	int			i;
+	char		c;
+
+	i = 0;
+	word = NULL;
+	entire = NULL;
+	while (input[i])
+	{
+		c = input[i];
+		word = ft_hlstnew(new_lev_node_c(&c));
 		ft_hlstadd_back(&entire, word);
 		i++;
 	}

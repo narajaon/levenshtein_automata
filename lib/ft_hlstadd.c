@@ -1,45 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_lev_node.c                                     :+:      :+:    :+:   */
+/*   ft_hlstadd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: awyart <awyart@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/26 15:43:13 by awyart            #+#    #+#             */
-/*   Updated: 2018/03/07 17:44:36 by awyart           ###   ########.fr       */
+/*   Updated: 2018/03/07 17:43:31 by awyart           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/levenshtein.h"
 
-t_lev		*new_lev_node(t_dlist *c)
+void		ft_hlstadd(t_dlist **alst, t_dlist *new)
 {
-	t_lev	*new;
-	char	*content;
-
-	content = c->content;
-	new = (t_lev *)malloc(sizeof(t_lev));
-	new->content = *content;
-	new->child = NULL;
-	return (new);
+	if (*alst == NULL)
+	{
+		*alst = new;
+		return ;
+	}
+	new->next = *alst;
+	(*alst)->prev = new;
+	*alst = new;
 }
 
-t_lev		*new_lev_node_c(char *c)
+void		ft_hlstadd_void(t_dlist **alst, void *new)
 {
-	t_lev	*new;
+	t_dlist		*node;
 
-	new = (t_lev *)malloc(sizeof(t_lev));
-	new->content = *c;
-	new->child = NULL;
-	return (new);
-}
-
-t_lev		*lev_dup(t_lev *lev)
-{
-	t_lev	*new;
-
-	new = (t_lev *)malloc(sizeof(0));
-	new->content = lev->content;
-	new->child = lev->child;
-	return (new);
+	node = ft_hlstnew_void(new);
+	if (*alst == NULL)
+	{
+		*alst = node;
+		return ;
+	}
+	node->next = *alst;
+	(*alst)->prev = node;
+	*alst = node;
 }

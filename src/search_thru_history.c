@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   search_thru_history.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: awyart <awyart@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/02/26 15:43:13 by awyart            #+#    #+#             */
+/*   Updated: 2018/03/07 17:44:43 by awyart           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/levenshtein.h"
 
 t_dlist		*get_branch(t_dlist *input, t_dlist *data_base)
 {
-	t_dlist	*branch;
-	t_lev	*node;
-	char	*c;
+	t_dlist			*branch;
+	t_lev			*node;
+	char			*c;
 
 	node = NULL;
 	branch = data_base;
@@ -29,14 +41,27 @@ t_dlist		*get_branch(t_dlist *input, t_dlist *data_base)
 
 t_dlist		*history_up(t_dlist *word, t_dlist *cur_branch, t_dlist *history)
 {
+	t_dlist		*res;
+	t_dlist		*branch;
+
+	res = NULL;
 	if (cur_branch == NULL)
-		return (get_branch(word, history));
+	{
+		branch = get_branch(word, history);
+		tree_to_list(NULL, branch, &res);
+		return (res);
+	}
+	if (cur_branch->next == NULL)
+		return (cur_branch);
 	return (cur_branch->next);
 }
 
-t_dlist		*history_down(t_dlist *word, t_dlist *cur_branch, t_dlist *history)
+t_dlist		*history_down(t_dlist *word, t_dlist *cur_branch,
+		t_dlist *history)
 {
 	if (cur_branch == NULL)
-		return (get_branch(word, history));
+		return (NULL);
+	if (cur_branch->prev == NULL)
+		return (NULL);
 	return (cur_branch->prev);
 }

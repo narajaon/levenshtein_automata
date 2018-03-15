@@ -1,66 +1,97 @@
 NAME = libautocompletion.a
-HEAD = inc/levenshtein.h
-PRINTF_DIR = ../ft_printf/
-LIBFT_DIR = ../libft/
-PRINTF_LIB = libftprintf.a
-LIBFT_LIB = libft.a
-MKFILE = Makefile
-SRC_DIR = src/
-OBJ_DIR = objs/
-CC = gcc
-O_FILES = \
+
+SRC_D:=src
+OBJ_D:=obj
+INC_D:=inc
+LIB_D:=..
+LOCAL_LIB:=lib/
+
+HEAD = \
+    inc/autocompletion.h\
+    inc/levenshtein.h\
+    inc/macros.h
+
+CC:=gcc
+CFLAGS:=-Wall -Wextra -Werror
+CFLAGS += -g3
+#CFLAG += -fsanitize=address
+
+INC:=-I $(INC_D)
+INCLUDES:=$(INC)
+
+O_FILES := \
 	add_branch_to_input.o\
 	add_word_to_tree.o\
 	history_to_tree.o\
 	leven.o\
 	list_to_lev_tree.o\
-	new_hlist.o\
 	new_lev_node.o\
 	print_lev_tree.o\
 	read_stock_input.o\
-	search_thru_history.o
-C_FILES = \
+	search_thru_history.o\
+	history_handler.o\
+	tree_to_dlist.o\
+	free_str.o\
+	free_autocmp.o\
+	completion_handler.o\
+	ft_hlstadd.o\
+	ft_hlstadd_back.o\
+	ft_hlstnew.o\
+	hl_dup.o\
+	hl_utils.o\
+	print_hlist.o \
+	compl_manip_funs.o
+
+C_FILES := \
 	add_branch_to_input.c\
 	add_word_to_tree.c\
 	history_to_tree.c\
 	leven.c\
 	list_to_lev_tree.c\
-	new_hlist.c\
 	new_lev_node.c\
 	print_lev_tree.c\
 	read_stock_input.c\
-	search_thru_history.c
-FLAG = -O2
-FLAG += -g
-FLAG += -Wall -Werror -Wextra
-#FLAG += -fsanitize=address
-OBJ = $(addprefix $(OBJ_DIR)/, $(O_FILES))
-SRC = $(addprefix $(SRC_DIR)/, $(C_FILES))
-VPATH = $(SRC_DIR)
+	search_thru_history.c\
+	history_handler.c\
+	tree_to_dlist.c\
+	free_str.c\
+	free_autocmp.c\
+	completion_handler.c \
+	compl_manip_funs.c
+
+L_FILES := \
+	ft_hlstadd.c\
+	ft_hlstadd_back.c\
+	ft_hlstnew.c\
+	hl_dup.c\
+	hl_utils.c\
+	print_hlist.c
+
+OBJ := $(addprefix $(OBJ_D)/, $(O_FILES))
+SRC := $(addprefix $(SRC_D)/, $(C_FILES))
+SRC := $(addprefix $(LOCAL_LIB), $(L_FILES))
+VPATH :=$(SRC_D):$(INC_D):$(LOCAL_LIB)
+
+include libs.mk
 
 all: $(NAME)
 
-$(NAME): $(SRC_DIR)$(C_FILES) $(HEAD) $(MKFILE) $(OBJ) $(SRC)
-	@make -C $(LIBFT_DIR)/
-	@make -C $(PRINTF_DIR)/
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+$(NAME): $(OBJ) $(HEAD) Makefile
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
+	@echo "\033[33m$(NAME)\033[0m built"
 
-$(OBJ_DIR)/%.o: %.c
-	mkdir -p $(OBJ_DIR)
-	$(CC) $(FLAGS) -c -o $@ $<
+$(OBJ_D)/%.o: %.c
+	@mkdir -p $(OBJ_D)
+	@$(CC) $(FLAGS) -c -o $@ $< $(INCLUDES)
 
 clean:
 	@echo "[autocomp] Deleting:\033[33m *.o\033[0m"
 	@rm -f $(OBJ)
-	@make -C $(LIBFT_DIR)/ clean
-	@make -C $(PRINTF_DIR)/ clean
 
 fclean: clean
 	@echo "[autocomp] Deleting:\033[33m $(NAME)\033[0m"
 	@rm -f $(NAME)
-	@make -C $(LIBFT_DIR)/ fclean
-	@make -C $(PRINTF_DIR)/ fclean
 
 re: fclean all
 
